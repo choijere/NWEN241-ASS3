@@ -1,0 +1,50 @@
+Task 1:
+[CORE]
+1) wait(&status)
+
+2) In Linux, the return value for the fork system call is the 
+   [child's PID] for the parent process, and [0] for the child process.
+
+3) "Sleeping" is not a valid process state.
+
+4) A Synchronous socket waits for a response after sending a signal,
+   before continuing execution.
+   An Asynchronous socket sends signals, but does not wait for a response.
+   It continues execution regardless.
+
+5) int sock = socket(int domain, int type, int protocol);
+
+6) TRUE/FALSE 
+   (A) [FALSE] Child process shares global variables of parent process.
+       Child is exact replica of parent, it has its own copy of global 
+       variables!
+   
+   (B) [TRUE] Child process shares address space with parent process.
+       UPON CREATION, they DO share address. Anything later modified in 
+       the child or parent has it's own address.
+   
+   (C) [FALSE] Child process cannot be terminated until the parent is.
+       A Child may be terminated any time before the parent is terminated.
+   
+   (D) [FALSE] Child process is automatically terminated when the parent is.
+       When the parent is terminated before the child, the child loses
+       it's exit code. It continues to run as a "zombie".
+
+7) Correct order: bind, listen, accept, recv.
+
+Task 2:
+[COMPLETION]
+1) output of code:
+     before fork
+     pidA = 0, pidB = -1, var = 81
+     pidA = 561, pidB = 561, var = 80
+
+2) Program will NOT print "HELLO". Assuming execl is successful, the current
+   process will be replaced by the "ls" call.
+
+3) "sendto" is NOT used for TCP Socket communication.
+
+Task 3:
+[Challenge]
+1) "Nesting" is printed 15 times. (diagram provided)
+
